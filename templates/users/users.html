@@ -1,0 +1,38 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<center>
+    <div classs="user-ico">
+        {% if yuzerrasmi.userrasmi %}
+        <img src="{{yuzerrasmi.userrasmi}}">
+        {%else%}
+        <h1>
+            <a href="#" style="text-decoration: none;
+            top: 80%;
+            color: black;">
+                <ion-icon name="person-outline"></ion-icon>
+            </a>
+        </h1>
+        {%endif%}
+
+
+    </div>
+    <div class="user-name">
+        <h1>{{user.username}}</h1>
+        <h1>{{user.first_name}}</h1>
+    </div>
+    <div class="lout">
+        <a href="{%url 'account_logout'%}">logout</a>
+    </div>
+    <a href="{% url 'CreatPost' %}">add your post</a>
+
+</center>
+<h1>Your posts</h1>
+
+{%for cinema in object_list%}
+<img src="{{cinema.img.url}}" alt="">
+{%endfor%}
+
+
+
+{% endblock content%}

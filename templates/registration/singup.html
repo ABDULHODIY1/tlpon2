@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% block title %}
+    registration
+{% endblock title %}
+{%block content%}
+<!-- <script>
+    function toogle() {
+    var blur = document.querySelector('#popcont');
+    blur.classList.toggle('active');
+    var popup = document.querySelector('#popup');
+    popup.classList.toggle('active');
+}
+</script>
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.container3{
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+    display: inline;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    translate: 0.5s;
+    padding: 20px;
+}
+.container3 .content{
+    position: absolute;
+    max-width: 800px;
+}
+#p{
+    position: relative;
+    padding: 5px 20px;
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #fff;
+    background: #111;
+    border-radius: 20%;
+    
+}
+button{
+    position: relative;
+    padding: 5px 20px;
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #fff;
+    background: #111;
+    border-radius: 20%;
+    
+}
+/* .active{
+    background-color: #111;
+    color: #fff;
+} */
+.container3#popcont.active{
+    position: absolute;
+    filter: blur(20px);
+    pointer-events: none;
+    user-select: none;
+
+}
+.container3 .content{
+    position: relative;
+    max-width: 800px;
+}
+#popup{
+    background: #fff;
+    position:absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 600px;
+    padding: 50px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 30);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+#popup.active{
+    width: 50%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+} -->
+</style>
+                   
+                    <div class="new">
+                        <div id="popup">
+                    <form  method="post">{% csrf_token %}
+                {{ form.as_p}} 
+                            <button  onclick="toogle()" type="submit">singin</button>
+                    <a href="/accaunts/password_change" type="link">changer password change</a>
+                    <a href="#" id="p" onclick="toogle()">close</a>
+                    </div>
+                    <div class="container3" id="popcont">
+                        <div class="content">
+                            <h2>saytga kirish uchun login tugmasini bising</h2>
+                            <a href="#" id="p" onclick="toogle()">singin</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+{%endblock content%}

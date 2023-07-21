@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+<head>
+        <link rel="stylesheet" href="{%static 'css/style.css'%}">
+        <title>Document</title>
+</head>
+
+<body>
+
+        <div class="cont" style="  display: grid;
+grid-template-columns: auto auto auto; ">
+                {%block content%}
+                <div class="block" style="position: absolute; top: -20vh; border: 4px solid transparent;
+                /* border-image: linear-gradient(45deg, #ff0,#f0f,#f00,#00f,#0f0); */
+                border-image-slice: 1;
+                box-shadow: 0 15px 25px rgba(0, 0, 0, 0.77);
+                padding: 0;
+                border-image-repeat:stretch;
+                padding: 20px;
+                margin: 300px;
+               transform: translate(-50%,-50%,-50%);
+               ">
+                        <center>
+                                <img src="{{cinema.img.url}}" id="1LO" width="200" height="200"
+                                        style="position:sticky; left:300px; top: 1vh; border-radius: 60%; "
+                                        width="200px" height="250px">
+
+                                        <h1>
+                                                {{cinema.title}}
+                                        </h1>
+                                        <h4>
+                                                {{cinema.text}}
+                                        </h4>
+                                        <p>
+                                                author: {{cinema.author}}
+                                        </p>
+                                        <p>
+                                                {{cinema.date}}
+                                        </p>
+                
+                        </center>
+                        
+                </div>
+                <style>
+                        p {
+                                padding: 5px;
+                        }
+                </style>
+                {%endblock content%}
+        </div>
+
+
+
+</body>

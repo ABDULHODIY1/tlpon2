@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>
+    var board;
+    var playerO = 'O';
+    varplayerX = 'X';
+    var currPlayer = playerO;
+    var gameOver = false;
+
+
+    window.onload = function () {
+        SetGame();
+    }
+    function SetGame() {
+        board = [
+            [' ', ' ', ' '],
+            [' ', ' ', ' '],
+            [' ', ' ', ' ']
+        ]
+
+        for (let r = 0; r < 3; r++) {
+            for (let c = 0; c < 3; c++) {
+                let tile = document.createElement("div");
+                tile.id = r.toString() + "-" + c.toString();
+                tile.classList.add("tile");
+                if (r == 0 || r == 1) {
+                    tile.classList.add("horizantal-line");
+                }
+                if (c == 0 || c == 1) {
+                    tile.classList.add("vertical-line");
+                }
+                document.getElementById("board").append(tile);
+            }
+        }
+
+    }
+</script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="gamme.js"></script>
+    <title>gammes</title>
+</head>
+
+<body>
+</body>
+<h1>tic tac toe</h1>
+<hr>
+<br>
+<div id='board'>
+    <div id="0-0"></div>
+    <div id="0-0"></div>
+    <div id="0-0"></div>
+    <div id="0-0"></div>
+</div>
+<style>
+    body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: red;
+}
+
+hr {
+    width: 500px;
+    height: 3px;
+    background: black;
+}
+
+#board {
+    width: 450px;
+    height: 450px;
+    background-color: aqua;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tile {
+    width: 174px;
+    height: 174px;
+
+    font-size: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.horizantal-line {
+    border-bottom: 3px solid black;
+}
+
+.vertical-line {
+    border-right: 3px solid black;
+}
+
+.winner {
+    background-color: lightgray;
+    color: red;
+}
+</style> -->
+
+</html>

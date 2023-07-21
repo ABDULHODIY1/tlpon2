@@ -1,0 +1,41 @@
+{%block content%}
+<h1 id="attention">
+    Do you want to delete this post?<br> If this post is deleted, it cannot be restored
+</h1>
+<form action="" method="post">{% csrf_token%}
+    <img src="{{cinema.img.url}}" alt="chiqmadi?" width="200px" height="250px">
+    <h1>{{cinema.title}}</h1>
+    <h3>{{cinema.post}}</h3>
+    <h4>{{cinema.narx}}</h4>
+    <input type="submit" value="Delete">
+</form>
+<style>
+    input{
+          background-color: #000000;
+          color: #fff;
+          border: darkgreen;
+          padding: 5px;
+          position: relative;
+          padding-inline: 20px;
+          border-radius: 20px;
+        }
+    input:hover{
+        background-color: green;
+        color: #000000;
+        transition: 1s;
+    }
+    h1#attention{
+        color: darkred;
+        font-family:monospace;
+        position: absolute;
+        top: 10vh;
+        left: 30%;
+        background-color: rgb(253, 149, 149);
+    }
+    form{
+        position: absolute;
+        left: 40%;
+        top: 30vh;
+    }
+</style>
+{%endblock content%}

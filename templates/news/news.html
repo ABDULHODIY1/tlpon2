@@ -1,0 +1,25 @@
+{% extends 'base.html'%}
+
+{%block content%}
+<center>
+    <h1>bloglar</h1>
+</center>
+{% if q %}
+<h1>{{q}}</h1>
+{%else%}
+<div class="all-cards " style="display: grid; grid-template-columns: auto auto auto auto;">
+  {% for cinema in cinema %}
+  <div class="container" style="width: fit-content; backdrop-filter: blur(22px); margin: 30px; margin-top: 7%;">
+    <div class="box">
+      <span class="title">{{cinema.title}}</span>
+      <div>
+        <span><a href="{%url 'detail' cinema.pk %}" class="card-link">lear more</a></span> <span>{{cinema.date}}</span>
+      </div>
+    </div>
+  </div>
+  {%endfor%}
+
+  {%endif%}
+
+
+{%endblock content%}
